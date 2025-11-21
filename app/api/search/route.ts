@@ -15,6 +15,7 @@ export async function GET(request: NextRequest) {
     });
     return NextResponse.json(response.data);
   } catch (error) {
+    console.error('Failed to fetch data from Jisho API:', error);
     return NextResponse.json({ error: 'Failed to fetch data from Jisho API' }, { status: 500 });
   }
 }
