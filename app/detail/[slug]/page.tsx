@@ -9,8 +9,16 @@ const DetailPage = () => {
   const searchParams = useSearchParams();
 
   const slug = decodeURIComponent(encodedSlug);
-  const index = searchParams.get('item') || '0'; // Ambil 'item' dari query param, default ke '0'
+  const encodedItem  = searchParams.get('item'); // Ambil 'item' dari query param, default ke '0'
+  let index: string = '0';
 
+  if(encodedItem){
+    try{
+      index = atob(encodedItem);
+    }catch(e){
+      console.error('we have an error', e);
+    }
+  }
   const { data, isLoading, error } = useQuery<JishoResponse>({
     queryKey: ['detail', slug],
     queryFn: () => fetchJishoData({ search: slug }),

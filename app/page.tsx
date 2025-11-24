@@ -26,7 +26,8 @@ export default function Home() {
           data.data.map((item, index) => (
             // Gunakan properti unik sebagai key, seperti slug atau index
             <div key={item.slug || index}>
-              <Link href={`/detail/${item.slug}?item=${index}`}>{item.slug}</Link>
+              {/* Encode index ke Base64 sebelum dimasukkan ke URL */}
+              <Link href={`/detail/${item.slug}?item=${btoa(String(index))}`}>{item.slug}</Link>
             </div>
           ))}
       </main>
