@@ -1,6 +1,9 @@
-import React from 'react';
+"use client";
+import { SearchPropsInterface } from '@/interfaces';
+import { useSearchStore } from "@/store/searchStore";
 
 export const Search = () => {
+  const { search, setSearch } = useSearchStore();
   return (
     <div className='w-full'>
       <form className="max-w-md mx-auto">
@@ -19,6 +22,8 @@ export const Search = () => {
             name="search"
             className="block w-full p-3 ps-9 bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand shadow-xs placeholder:text-body"
             placeholder="Search"
+            value={search}
+            onChange={e => setSearch(e.target.value)}
             required
           />
           <button

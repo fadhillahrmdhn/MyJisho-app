@@ -8,14 +8,15 @@ import { fetchJishoData } from "@/services";
 import { JishoResponse } from "@/interfaces";
 import { useQuery } from "@tanstack/react-query";
 import { useState } from "react";
-
+import { useSearchStore } from "@/store";
 
 export default function Home() {
   const queryClient = new QueryClient();
-  const [search, setSearch] = useState('');
+  const { search } = useSearchStore();
   const { data, isLoading, error } = useQuery<JishoResponse>({
-    queryKey: ['jishoData', 'house'],
-    queryFn: () => fetchJishoData({ query: 'house' }),
+    queryKey: ['jishoData', search],
+    queryFn: () => fetchJishoData({ search: search }),
+    enabled: !!search,
     retry: 2,
     refetchOnWindowFocus: false
   });
