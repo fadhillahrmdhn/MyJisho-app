@@ -5,7 +5,7 @@ import { QueryClient } from '@tanstack/react-query';
 import { fetchJishoData } from '@/services';
 import { JishoResponse } from '@/interfaces';
 import { useQuery } from '@tanstack/react-query';
-import { useState } from 'react';
+import { Fragment, useState } from 'react';
 import { useSearchStore } from '@/store';
 import Link from 'next/link';
 
@@ -25,9 +25,16 @@ export default function Home() {
         {data?.data &&
           data.data.map((item, index) => (
             // Gunakan properti unik sebagai key, seperti slug atau index
-            <div key={item.slug || index}>
+            <div key={item.slug || index} className='flex '>
               {/* Encode index ke Base64 sebelum dimasukkan ke URL */}
-              <Link href={`/detail/${item.slug}?item=${btoa(String(index))}`}>{item.slug}</Link>
+              <Link href={`/detail/${item.slug}?item=${btoa(String(index))}`}>
+              {item.japanese.map((word, idx) => (
+                <Fragment key={idx}>
+                <span>{word.word}</span>
+                {idx<item.japanese.length -1 && <span>/</span>}
+                </Fragment>
+              ))}
+              <span>-{item.japanese[0].reading}</span></Link>
             </div>
           ))}
       </main>
