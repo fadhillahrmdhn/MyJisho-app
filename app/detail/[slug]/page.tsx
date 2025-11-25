@@ -37,6 +37,11 @@ const DetailPage = () => {
             <p>Reading: {item.reading}</p>
           </div>
         ))}
+        {data?.data[Number(index)] && data.data[Number(index)].senses.map((sense, idx) => (
+          <div key={idx}>
+            <p>Definition {idx + 1}: {sense.english_definitions.join(', ')}</p>
+          </div>
+        ))}
     </div>
   );
 };
