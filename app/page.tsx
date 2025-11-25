@@ -25,7 +25,7 @@ export default function Home() {
         {data?.data &&
           data.data.map((item, index) => (
             // Gunakan properti unik sebagai key, seperti slug atau index
-            <div key={item.slug || index} className='flex '>
+            <div key={item.slug || index} className='mb-4'>
               {/* Encode index ke Base64 sebelum dimasukkan ke URL */}
               <Link href={`/detail/${item.slug}?item=${btoa(String(index))}`}>
               {item.japanese.map((word, idx) => (
@@ -34,7 +34,9 @@ export default function Home() {
                 {idx<item.japanese.length -1 && <span>/</span>}
                 </Fragment>
               ))}
-              <span>-{item.japanese[0].reading}</span></Link>
+              <span> - {item.japanese[0].reading}</span>
+              <p>{item.senses[0].english_definitions[0]}</p>
+              </Link>
             </div>
           ))}
       </main>
