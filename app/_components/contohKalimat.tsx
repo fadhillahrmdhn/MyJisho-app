@@ -11,8 +11,12 @@ export const ContohKalimat = ({text}:{text:string}) => {
         refetchOnWindowFocus: false,
       });
 
+
+
+
+      // *Todo: hanya tampilkan 2 kalimat saja 
   return (
-    <div>{data?.results && data.results.map((item, idx) => (
+    <div>{data?.results && data.results.filter(item => item.translations[1]?.[0]?.text).slice(0,3).map((item, idx) => (
         <div key={idx}>
             <p>{item.text}</p>
             <p><i>- {item.translations[1]?.[0]?.text}</i></p>
