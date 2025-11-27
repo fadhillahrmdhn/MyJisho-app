@@ -3,6 +3,7 @@ import { useParams, useSearchParams } from 'next/navigation';
 import { useQuery } from '@tanstack/react-query';
 import { JishoResponse } from '@/interfaces';
 import { fetchJishoData } from '@/services';
+import { ContohKalimat } from '@/app/_components';
 
 const DetailPage = () => {
   const { slug: encodedSlug } = useParams<{ slug: string }>();
@@ -42,6 +43,7 @@ const DetailPage = () => {
             <p>Definition {idx + 1}: {sense.english_definitions.join(', ')}</p>
           </div>
         ))}
+        <ContohKalimat text={slug} />
     </div>
   );
 };
