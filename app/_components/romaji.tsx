@@ -11,8 +11,6 @@ export const Romaji = ({romaji}: {romaji: string}) => {
         refetchOnWindowFocus: false,
       });
 
-      console.log(data);
-
   return (
     <p>{data?.result}</p>
   )
