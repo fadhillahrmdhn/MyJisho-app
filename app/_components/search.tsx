@@ -16,8 +16,7 @@ export const Search = () => {
     refetchOnWindowFocus: false,
   });
   return (
-    //*TODO: z-index tidak berfungsi  */
-    <div className="relative max-w-md mx-auto z-10">
+    <div className="relative max-w-md mx-auto z-50">
       <form className="w-full mx-auto">
         <label htmlFor="search" className="block mb-2.5 text-sm font-medium text-heading sr-only ">
           Search
@@ -46,7 +45,7 @@ export const Search = () => {
 
       {search && isDropdownOpen && (
         <div
-          className="absolute max-h-96 overflow-y-auto px-4 w-full bg-gray-400/10 rounded-b-md shadow-md"
+          className="absolute z-50 max-h-96 overflow-y-auto px-4 w-full bg-gray-400/10 rounded-b-md shadow-md"
         >
           {data?.data &&
             data.data.map((item, index) => (
