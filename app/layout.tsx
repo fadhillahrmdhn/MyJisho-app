@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
 import { QueryProviders } from '@/provider';
-import { Search } from './_components'; // Pastikan path import benar
+import { Dashboard } from './_components';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -28,11 +28,10 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <QueryProviders>
-          <header>
-            <Search />
-          </header>
           <main>
+            <Dashboard>
             {children}
+            </Dashboard>
           </main>
         </QueryProviders>
       </body>

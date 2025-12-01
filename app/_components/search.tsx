@@ -16,7 +16,7 @@ export const Search = () => {
     refetchOnWindowFocus: false,
   });
   return (
-    <div className="relative max-w-md mx-auto">
+    <div className="z-10 relative max-w-md mx-auto">
       <form className="w-full mx-auto">
         <label htmlFor="search" className="block mb-2.5 text-sm font-medium text-heading sr-only ">
           Search
