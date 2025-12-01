@@ -28,7 +28,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <QueryProviders>
-          <header className="relative z-10">
+          <header>
             <Search />
           </header>
           <main>{children}</main>

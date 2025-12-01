@@ -45,7 +45,7 @@ export const Search = () => {
 
       {search && isDropdownOpen && (
         <div
-          className="absolute z-10 max-h-96 overflow-y-auto px-4 w-full bg-gray-400/10 rounded-b-md shadow-md"
+          className="absolute max-h-96 overflow-y-auto px-4 w-full bg-gray-400/10 rounded-b-md shadow-md"
         >
           {data?.data &&
             data.data.map((item, index) => (
