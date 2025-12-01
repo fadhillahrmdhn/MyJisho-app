@@ -45,12 +45,12 @@ export const Search = () => {
 
       {search && isDropdownOpen && (
         <div
-          className="absolute max-h-96 overflow-y-auto px-4 w-full bg-gray-400/10 rounded-b-md shadow-md"
+          className="absolute max-h-96 overflow-y-auto px-4 w-full bg-gray-100 rounded-b-md shadow-md"
         >
           {data?.data &&
             data.data.map((item, index) => (
               // Gunakan properti unik sebagai key, seperti slug atau index
-              <div key={item.slug || index} className="my-4 border-b border-gray-300 pb-2">
+              <div key={item.slug || index} className="my-4 border-b border-gray-300 pb-2 ">
                 {/* Encode index ke Base64 sebelum dimasukkan ke URL */}
                 <Link href={`/detail/${item.slug}?item=${btoa(String(index))}`} onClick={() => setIsDropdownOpen(false)}>
                   {item.japanese.map((word, idx) => (

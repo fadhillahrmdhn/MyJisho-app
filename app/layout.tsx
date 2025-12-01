@@ -31,7 +31,9 @@ export default function RootLayout({
           <header>
             <Search />
           </header>
-          <main>{children}</main>
+          <main>
+            {children}
+          </main>
         </QueryProviders>
       </body>
     </html>
