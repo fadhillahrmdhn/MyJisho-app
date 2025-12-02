@@ -44,13 +44,13 @@ export const Search = () => {
       </form>
 
       {search && isDropdownOpen && (
-        <div className="absolute max-h-96 overflow-y-auto px-4 w-full bg-card text-card-foreground rounded-b-lg shadow-md">
+        <div className="absolute max-h-96 overflow-y-auto px-4 w-full bg-card text-card-foreground rounded-b-lg shadow-md border border-t-0 border-pink-500 hover:">
           {data?.data &&
             data.data.map((item, index) => (
               // Gunakan properti unik sebagai key, seperti slug atau index
-              <div key={item.slug || index} className="my-4 border-b border-border pb-2 ">
+              <div key={item.slug || index} className="my-1 hover:rounded-md hover:bg-accent border-b border-pink-100">
                 {/* Encode index ke Base64 sebelum dimasukkan ke URL */}
-                <Link href={`/detail/${item.slug}?item=${btoa(String(index))}`} onClick={() => setIsDropdownOpen(false)}>
+                <Link href={`/detail/${item.slug}?item=${btoa(String(index))}`} className="block p-2" onClick={() => setIsDropdownOpen(false)}>
                   {item.japanese.map((word, idx) => (
                     <Fragment key={idx}>
                       <span>{word.word}</span>
