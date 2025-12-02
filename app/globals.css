@@ -52,7 +52,7 @@
   --popover: oklch(1 0 0);
   --popover-foreground: hsl(340 10% 15%);
   --primary: hsl(340 70% 50%);
-  --primary-foreground: hsl(340 100% 98%);
+  --primary-foreground: hsl(340 100% 97%);
   --secondary: hsl(340 100% 94%);
   --secondary-foreground: hsl(340 70% 50%);
   --muted: hsl(340 50% 96%);

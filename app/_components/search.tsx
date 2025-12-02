@@ -48,7 +48,7 @@ export const Search = () => {
           {data?.data &&
             data.data.map((item, index) => (
               // Gunakan properti unik sebagai key, seperti slug atau index
-              <div key={item.slug || index} className="my-1 hover:rounded-md hover:bg-accent border-b border-pink-100">
+              <div key={item.slug || index} className=" hover:rounded-md hover:bg-primary-foreground border-b border-pink-200">
                 {/* Encode index ke Base64 sebelum dimasukkan ke URL */}
                 <Link href={`/detail/${item.slug}?item=${btoa(String(index))}`} className="block p-2" onClick={() => setIsDropdownOpen(false)}>
                   {item.japanese.map((word, idx) => (
