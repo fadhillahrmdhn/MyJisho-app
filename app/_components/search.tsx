@@ -31,7 +31,7 @@ export const Search = () => {
             type="search"
             id="search"
             name="search"
-            className="block w-full p-3 ps-9 bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand shadow-xs placeholder:text-body "
+            className="block w-full p-3 ps-9 bg-background border  text-foreground text-sm rounded-lg focus:ring-ring focus:border-ring shadow-sm placeholder:text-muted-foreground border-pink-500"
             placeholder="Search"
             value={search}
             onChange={(e) => {
@@ -44,13 +44,11 @@ export const Search = () => {
       </form>
 
       {search && isDropdownOpen && (
-        <div
-          className="absolute max-h-96 overflow-y-auto px-4 w-full bg-gray-100 rounded-b-md shadow-md"
-        >
+        <div className="absolute max-h-96 overflow-y-auto px-4 w-full bg-card text-card-foreground rounded-b-lg shadow-md">
           {data?.data &&
             data.data.map((item, index) => (
               // Gunakan properti unik sebagai key, seperti slug atau index
-              <div key={item.slug || index} className="my-4 border-b border-gray-300 pb-2 ">
+              <div key={item.slug || index} className="my-4 border-b border-border pb-2 ">
                 {/* Encode index ke Base64 sebelum dimasukkan ke URL */}
                 <Link href={`/detail/${item.slug}?item=${btoa(String(index))}`} onClick={() => setIsDropdownOpen(false)}>
                   {item.japanese.map((word, idx) => (
