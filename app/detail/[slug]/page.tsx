@@ -29,12 +29,11 @@ const DetailPage = () => {
   });
 
   return (
-    <div>
-      <h1>Detail Page</h1>
+    <div className="p-4">
       {data?.data[Number(index)] &&
         data.data[Number(index)].japanese.map((item, idx) => (
           <div key={idx}>
-            <p>Word: {item.word}</p>
+            <p>{item.word}</p>
             <p>Reading: {item.reading}</p>
           </div>
         ))}
@@ -43,7 +42,9 @@ const DetailPage = () => {
             <p>Definition {idx + 1}: {sense.english_definitions.join(', ')}</p>
           </div>
         ))}
+        <div>
         <ContohKalimat text={slug} />
+        </div>
     </div>
   );
 };
