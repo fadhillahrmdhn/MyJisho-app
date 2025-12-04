@@ -1,7 +1,7 @@
 'use client';
 
 import * as React from 'react';
-import { IconCamera, IconFileAi, IconFileDescription, IconHelp, IconInnerShadowTop, IconSearch, IconSettings } from '@tabler/icons-react';
+import {  IconHelp, IconSearch, IconSettings } from '@tabler/icons-react';
 
 import { NavMain } from '@/components/nav-main';
 import { NavSecondary } from '@/components/nav-secondary';
@@ -45,7 +45,6 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
           <SidebarMenuItem>
             <SidebarMenuButton asChild className="data-[slot=sidebar-menu-button]:!p-1.5 hover:bg-transparent">
               <Link href="/">
-                <IconInnerShadowTop className="!size-5" />
                 <span className="text-base font-semibold">MyJisho</span>
               </Link>
             </SidebarMenuButton>
