@@ -25,13 +25,14 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
+
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <QueryProviders>
           <main>
             <Dashboard>
-              <Image src="/images/banner-myjishoapp.png" alt="MyJisho Logo" width={530} height={125} className="mx-auto mb-3" />
               <Search />
               {children}
             </Dashboard>

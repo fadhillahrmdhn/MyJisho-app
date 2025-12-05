@@ -8,12 +8,13 @@ import { useQuery } from '@tanstack/react-query';
 import { Fragment, useState } from 'react';
 import { useSearchStore } from '@/store';
 import Link from 'next/link';
+import { Search } from './_components';
 
 export default function Home() {
 
 
   return (
-    <div className="flex  items-center justify-center bg-zinc-50 font-sans dark:bg-black">
+    <div>
 
     </div>
   );
