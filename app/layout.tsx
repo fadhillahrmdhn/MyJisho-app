@@ -2,7 +2,8 @@ import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
 import { QueryProviders } from '@/provider';
-import { Dashboard } from './_components';
+import { Dashboard, Search } from './_components';
+import Image from 'next/image';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -30,7 +31,9 @@ export default function RootLayout({
         <QueryProviders>
           <main>
             <Dashboard>
-            {children}
+              <Image src="/images/banner-myjishoapp.png" alt="MyJisho Logo" width={530} height={125} className="mx-auto mb-3" />
+              <Search />
+              {children}
             </Dashboard>
           </main>
         </QueryProviders>

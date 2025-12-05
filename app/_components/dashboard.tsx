@@ -36,7 +36,6 @@ export const Dashboard = ({ children }: { children: React.ReactNode }) => {
           </div>
         </header>
         <div>
-            <Search />
             {children}
         </div>
       </SidebarInset>
