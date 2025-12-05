@@ -6,6 +6,7 @@ import { Fragment, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
+import { motion, AnimatePresence } from 'framer-motion';
 
 export const Search = () => {
   const [search, setSearch] = useState<string>('');
@@ -21,9 +22,18 @@ export const Search = () => {
   const isHomePage: boolean = pathname === '/';
   return (
     <>
-      {isHomePage &&
-      <Image src="/images/banner-myjishoapp.png" alt="MyJisho Logo" width={530} height={125} className="mx-auto mb-3" />
-      }
+      <AnimatePresence>
+        {isHomePage && (
+          <motion.div
+            initial={{ opacity: 1, height: 'auto' }} // Kondisi awal
+            exit={{ opacity: 0, height: 0 }} // Animasi saat menghilang
+            transition={{ duration: 0.3 }} // Durasi animasi
+            className="overflow-hidden"
+          >
+            <Image src="/images/banner-myjishoapp.png" alt="MyJisho Logo" width={530} height={125} className="mx-auto mb-3" priority />
+          </motion.div>
+        )}
+      </AnimatePresence>
       <div className="z-10 relative max-w-md mx-auto">
         <form className="w-full mx-auto">
           <label htmlFor="search" className="block mb-2.5 text-sm font-medium text-heading sr-only ">
