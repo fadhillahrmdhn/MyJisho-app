@@ -8,6 +8,7 @@ import { NavSecondary } from '@/components/nav-secondary';
 import { NavUser } from '@/components/nav-user';
 import { Sidebar, SidebarContent, SidebarFooter, SidebarHeader, SidebarMenu, SidebarMenuButton, SidebarMenuItem } from '@/components/ui/sidebar';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const data = {
   user: {
@@ -45,7 +46,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
           <SidebarMenuItem>
             <SidebarMenuButton asChild className="data-[slot=sidebar-menu-button]:!p-1.5 hover:bg-transparent">
               <Link href="/">
-                <span className="text-base font-semibold">MyJisho</span>
+                <Image src="/images/banner-myjishoapp.png" alt="MyJisho Logo" width={90} height={5}  priority />
               </Link>
             </SidebarMenuButton>
           </SidebarMenuItem>
