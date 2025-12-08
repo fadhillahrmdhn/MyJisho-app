@@ -19,7 +19,7 @@ const data = {
   navMain: [
     {
       title: 'Search',
-      url: '#',
+      url: '/',
       icon: IconSearch,
     },
   ],
