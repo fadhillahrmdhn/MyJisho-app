@@ -12,8 +12,6 @@ import {
   SidebarTrigger,
 } from "@/components/ui/sidebar"
 
-import { Search } from './';
-
 export const Dashboard = ({ children }: { children: React.ReactNode }) => {
   return (
     <SidebarProvider>
