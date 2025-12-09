@@ -10,17 +10,17 @@ const socialLinks = [
 
 export const Footer = () => {
   return (
-    <footer className="bg-primary/10 py-10 w-full absolute -bottom-1/4">
-      <div className="flex w-full flex-col items-center justify-center gap-4 px-4">
+    <footer className="bg-primary/10 pt-10 pb-4 w-full absolute -bottom-1/4">
+      <div className="flex w-full flex-row  justify-between gap-4 px-4">
+        <div className="text-center text-sm text-muted-foreground">
+          <p>© {new Date().getFullYear()} Fadhillah Ramadhan. All rights reserved.</p>
+        </div>
         <div className="flex gap-4">
           {socialLinks.map((social) => (
             <a key={social.label} href={social.href} target="_blank" rel="noopener noreferrer" aria-label={social.label} className="text-muted-foreground transition-colors hover:text-primary">
               <social.icon className="size-6" />
             </a>
           ))}
-        </div>
-        <div className="text-center text-sm text-muted-foreground">
-          <p>© {new Date().getFullYear()} Fadhillah Ramadhan. All rights reserved.</p>
         </div>
       </div>
     </footer>
