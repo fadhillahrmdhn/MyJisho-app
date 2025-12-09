@@ -10,7 +10,7 @@ const socialLinks = [
 
 export const Footer = () => {
   return (
-    <footer className="bg-primary/30 py-10 w-full absolute -bottom-1/4">
+    <footer className="bg-primary/10 py-10 w-full absolute -bottom-1/4">
       <div className="flex w-full flex-col items-center justify-center gap-4 px-4">
         <div className="flex gap-4">
           {socialLinks.map((social) => (
