@@ -10,16 +10,16 @@ const socialLinks = [
 
 export const Footer = () => {
   return (
-    <footer className="bg-black py-10 w-full absolute -bottom-1/4">
+    <footer className="bg-primary/30 py-10 w-full absolute -bottom-1/4">
       <div className="flex w-full flex-col items-center justify-center gap-4 px-4">
         <div className="flex gap-4">
           {socialLinks.map((social) => (
-            <a key={social.label} href={social.href} target="_blank" rel="noopener noreferrer" aria-label={social.label} className="text-slate-400 transition-colors hover:text-cyan-400">
+            <a key={social.label} href={social.href} target="_blank" rel="noopener noreferrer" aria-label={social.label} className="text-muted-foreground transition-colors hover:text-primary">
               <social.icon className="size-6" />
             </a>
           ))}
         </div>
-        <div className="text-center text-sm text-slate-400">
+        <div className="text-center text-sm text-muted-foreground">
           <p>© {new Date().getFullYear()} Fadhillah Ramadhan. All rights reserved.</p>
         </div>
       </div>
