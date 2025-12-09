@@ -32,9 +32,9 @@ export default function RootLayout({
             <Dashboard>
               <Search />
               {children}
+              <Footer />
             </Dashboard>
           </main>
-          <Footer />
         </QueryProviders>
       </body>
     </html>
