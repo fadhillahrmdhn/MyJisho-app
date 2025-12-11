@@ -11,7 +11,7 @@ const socialLinks = [
 export const Footer = () => {
   return (
     <footer className="bg-primary/10 py-5  w-full absolute -bottom-1/4">
-      <div className="flex w-full flex-row  justify-between gap-4 px-4">
+      <div className="flex w-full flex-col-reverse md:flex-row items-center justify-between gap-4 px-4">
         <div className="text-center text-sm text-muted-foreground">
           <p>© {new Date().getFullYear()} Fadhillah Ramadhan. All rights reserved.</p>
         </div>
