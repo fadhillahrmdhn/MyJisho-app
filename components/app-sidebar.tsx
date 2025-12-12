@@ -11,7 +11,7 @@ import Image from 'next/image';
 
 const data = {
   user: {
-    name: 'shadcn',
+    name: 'user',
     email: 'm@example.com',
     avatar: '/avatars/shadcn.jpg',
   },
