@@ -3,7 +3,7 @@ import { useParams, useSearchParams } from 'next/navigation';
 import { useQuery } from '@tanstack/react-query';
 import { JishoResponse } from '@/interfaces';
 import { fetchJishoData } from '@/services';
-import { ContohKalimat, Romaji } from '@/app/_components';
+import { ContohKalimat } from '@/app/_components';
 import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
 
